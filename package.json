@@ -1,0 +1,23 @@
+{
+  "name": "newsletter-signup",
+  "version": "1.0.0",
+  "description": "A newsletter to store user emails",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NPitroff/Newsletter-Signup.git"
+  },
+  "author": "Nicolai Pitroff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NPitroff/Newsletter-Signup/issues"
+  },
+  "homepage": "https://github.com/NPitroff/Newsletter-Signup#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3"
+  }
+}
