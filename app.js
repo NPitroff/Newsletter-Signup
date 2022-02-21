@@ -9,7 +9,7 @@ const app = express();
 // use bodyParser
 app.use(bodyParser.urlencoded({extended: true}));
 
-
+// script to use the css and images on the website
 app.use(express.static("public"));
 
 // Test webpage to make sure it is linked
@@ -17,7 +17,10 @@ app.get("/", function(req, res){
   res.sendFile(__dirname + "/signup.html");
 })
 
-
+// post route
+app.post("/", function(req, res){
+  console.log(req.body);
+})
 
 // turn on server
 app.listen(3000, function(){
