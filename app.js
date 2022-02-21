@@ -9,9 +9,12 @@ const app = express();
 // use bodyParser
 app.use(bodyParser.urlencoded({extended: true}));
 
+
+app.use(express.static("public"));
+
 // Test webpage to make sure it is linked
 app.get("/", function(req, res){
-  res.send("<h1>Hello World!</h1>");
+  res.sendFile(__dirname + "/signup.html");
 })
 
 
