@@ -26,16 +26,42 @@ body {
   z-index: 2;
 }
 
-.form-signin input[type="email"] {
+.top {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  /* rounding the input */
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 100%;
+    height: 3rem;
+    font-size: 1.5rem;
 }
 
-.form-signin input[type="password"] {
+.middle {
+  border-radius: 0;
+  margin-bottom: -1px;
+  /* rounding the input */
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 100%;
+    height: 3rem;
+    font-size: 1.5rem;
+}
+
+.bottom {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  /* rounding the input */
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 100%;
+    height: 3rem;
+    font-size: 1.5rem;
 }
 
 .bd-placeholder-img {
