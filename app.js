@@ -8,6 +8,10 @@ const bodyParser = require("body-parser");
 const app = express();
 // use bodyParser
 app.use(bodyParser.urlencoded({extended: true}));
+// use jsdom to mock a window for jquery
+const { JSDOM } = require( "jsdom" );
+const { window } = new JSDOM( "" );
+const $ = require( "jquery" )( window );
 
 // script to use the css and images on the website
 app.use(express.static("public"));
