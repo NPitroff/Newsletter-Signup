@@ -24,9 +24,37 @@ app.get("/", function(req, res){
 })
 
 // post route
-app.post("/", function(req, res){
-  console.log(req.body);
-})
+app.post('/',(req, res) =>{
+  console.log(JSON.stringify(req.fields));
+});
+
+
+
+
+
+// defining an axios request
+window.addEventListener('load', () =>{
+  // define the form as a target
+  const form = document.querySelector('form');
+  // add event listener to the form
+  form.addEventListener('submit', (e) =>{
+    // prevent page reload after button click
+    e.preventDefault();
+    // create the form object
+    let data = new FormData(form);
+    // axios request
+    axios({
+      method: 'post',
+      url: '/'
+      data: data,
+    })
+    .then((res) =>{
+      console.log(res)
+    })
+    // if there is an error
+    .catch((err) =>{throw err});
+  });
+});
 
 // turn on server
 app.listen(3000, function(){
