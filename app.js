@@ -5,7 +5,7 @@ const formidable = require('express-formidable');
 //require https for requests
 const https = require("https");
 // require axios
-const axios = require('axios');
+const axios = require('axios').default;
 // require body-parser to sort through the data
 const bodyParser = require("body-parser");
 // translate to app
@@ -25,10 +25,28 @@ app.get("/", function(req, res){
   res.sendFile(__dirname + "/signup.html");
 })
 
+// axios get request
+axios.get('https://regres.in/api/users')
+  .then(function(response) {
+    // handle for success
+    console.log(response);
+  })
+  .catch(function(error){
+    // handle error
+    console.log(error)
+  });
+
 // post route
-app.post('/',(req, res) =>{
-  console.log(JSON.stringify(req.fields));
+axios.post('https://regres.in/api/users', {
+  name:'Bob Hope',
+  })
+.then(function(response){
+  console.log("POST response "+response);
+})
+.catch(function(error){
+  console.log("POST error "+error);
 });
+
 
 
 
