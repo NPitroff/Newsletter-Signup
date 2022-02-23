@@ -1,23 +1,35 @@
-// defining an axios request
-window.addEventListener('load', () =>{
-  // define the form as a target
-  const form = document.querySelector('form');
-  // add event listener to the form
-  form.addEventListener('submit', (e) =>{
-    // prevent page reload after button click
-    e.preventDefault();
-    // create the form object
-    let data = new FormData(form);
-    // axios request
-    axios({
-      method: 'post',
-      url: '/',
-      data: data,
-    })
-    .then((res) =>{
-      console.log(res)
-    })
-    // if there is an error
-    .catch((err) =>{throw err});
+// require axios
+const axios = require('axios').default;
+
+//define the params for the form
+const firstName = document.getElementById("firstname");
+const lastName = document.getElementById("lastName");
+const email = document.getElementById("email");
+
+
+
+// axios get request
+axios.get('https://regres.in/api/users')
+  .then(function(response) {
+    // handle for success
+    console.log(response);
+  })
+  .catch(function(error){
+    // handle error
+    console.log(error)
   });
+
+// axios post route
+axios.post("https://regres.in/api/users", {
+  firstName:'Bob',
+  lastName:'Hope',
+  email:'bob.hope@aol.com'
+}
+  )
+.then(function(response){
+
+  console.log("POST response "+response);
+})
+.catch(function(error){
+  console.log("POST error "+error);
 });

@@ -1,15 +1,15 @@
-// requre express npm
+// npm packages
 const express = require("express");
 // require express-formidable
 const formidable = require('express-formidable');
 //require https for requests
 const https = require("https");
-// require axios
-const axios = require('axios').default;
 // require body-parser to sort through the data
 const bodyParser = require("body-parser");
 // translate to app
 const app = express();
+
+
 // use bodyParser
 app.use(bodyParser.urlencoded({extended: true}));
 // use jsdom to mock a window for jquery
@@ -25,27 +25,7 @@ app.get("/", function(req, res){
   res.sendFile(__dirname + "/signup.html");
 })
 
-// axios get request
-axios.get('https://regres.in/api/users')
-  .then(function(response) {
-    // handle for success
-    console.log(response);
-  })
-  .catch(function(error){
-    // handle error
-    console.log(error)
-  });
 
-// post route
-axios.post('https://regres.in/api/users', {
-  name:'Bob Hope',
-  })
-.then(function(response){
-  console.log("POST response "+response);
-})
-.catch(function(error){
-  console.log("POST error "+error);
-});
 
 
 
