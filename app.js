@@ -26,6 +26,8 @@ app.post("/",function(req, res){
   var firstName = req.body.firstName;
   var lastName = req.body.lastName;
   var email = req.body.email;
+// check to see that the var have values
+console.log(firstName, lastName, email);
 })
 
 
