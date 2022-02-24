@@ -23,25 +23,28 @@ app.get("/", function(req, res){
 })
 
 app.post("/",function(req, res){
-  var firstName = req.body.firstName;
-  var lastName = req.body.lastName;
-  var email = req.body.email;
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const email = req.body.email;
 // check to see that the var have values
 // console.log(firstName, lastName, email);
 // data object to send to mailchimp
 var data = {
   // hold the information in an array
   members:[
-    {
+      {
       email_address: emal,
       status: "subscribed",
       merge_fields:{
         FNAME:firstname,
         LNAME:lastName
-      }
+        }
       }
     ],
-}
+  }
+
+  // stringify the data
+  var jsonData = JSON.stringify(data);
 })
 
 
