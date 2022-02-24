@@ -27,13 +27,31 @@ app.post("/",function(req, res){
   var lastName = req.body.lastName;
   var email = req.body.email;
 // check to see that the var have values
-console.log(firstName, lastName, email);
+// console.log(firstName, lastName, email);
+// data object to send to mailchimp
+var data = {
+  // hold the information in an array
+  members:[
+    {
+      email_address: emal,
+      status: "subscribed",
+      merge_fields:{
+        FNAME:firstname,
+        LNAME:lastName
+      }
+      }
+    ],
+}
 })
 
 
 
 
+// api key
+// var key = afd7113ea4a60697cdd1a1841ed39158-us14;
 
+//list id
+// var listId = db11378812;
 
 
 
