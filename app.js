@@ -45,16 +45,19 @@ var data = {
 
   // stringify the data
   var jsonData = JSON.stringify(data);
+
+  var url = "https://us14.api.mailchimp.com/3.0/lists/db11378812";
+
+  const options = {
+    method: "POST",
+    auth: "nicolai1:afd7113ea4a60697cdd1a1841ed39158-us14"
+  }
+
+  https.request(url, options, function(response){
+
+  })
 })
 
-
-
-
-// api key
-// var key = afd7113ea4a60697cdd1a1841ed39158-us14;
-
-//list id
-// var listId = db11378812;
 
 
 
