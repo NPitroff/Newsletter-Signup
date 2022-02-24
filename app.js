@@ -33,10 +33,10 @@ var data = {
   // hold the information in an array
   members:[
       {
-      email_address: emal,
+      email_address: email,
       status: "subscribed",
       merge_fields:{
-        FNAME:firstname,
+        FNAME:firstName,
         LNAME:lastName
         }
       }
@@ -53,9 +53,15 @@ var data = {
     auth: "nicolai1:afd7113ea4a60697cdd1a1841ed39158-us14"
   }
 
-  https.request(url, options, function(response){
-
+  const request = https.request(url, options, function(response){
+    response.on("data", function(data){
+      console.log(JSON.parse(data));
+    })
   })
+  // call the POST request
+  request.write(jsonData);
+  request.end();
+
 })
 
 
