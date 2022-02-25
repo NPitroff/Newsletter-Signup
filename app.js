@@ -49,10 +49,12 @@ var data = {
   var jsonData = JSON.stringify(data);
 
   var url = "https://us14.api.mailchimp.com/3.0/lists/db11378812";
+  var apiKey = process.env.API_Key;
+  var name = process.env.NAME;
 
   const options = {
     method: "POST",
-    auth: "nicolai1:afd7113ea4a60697cdd1a1841ed39158-us14"
+    auth: name+":"+apiKey
   }
 
   const request = https.request(url, options, function(response){
