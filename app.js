@@ -8,6 +8,8 @@ const bodyParser = require("body-parser");
 const request = require("request");
 // translate to app
 const app = express();
+// use dotenv
+require("dotenv").config();
 
 
 // use bodyParser
@@ -63,7 +65,7 @@ var data = {
   request.end();
 
 })
-// include a gitignore to hide the API key 
+// include a gitignore to hide the API key
 
 
 
