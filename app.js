@@ -59,7 +59,14 @@ var data = {
 
   const request = https.request(url, options, function(response){
     response.on("data", function(data){
-      console.log(JSON.parse(data));
+      const jsonData = JSON.parse(data);
+      console.log(jsonData);
+      // response for success
+      if(jsonData.status != "subscribed"){
+        res.sendFile(__dirname + "/failure.html")
+      } else {
+        res.sendFile(__dirname + "/success.html")
+      }
     })
   })
   // call the POST request
@@ -67,7 +74,9 @@ var data = {
   request.end();
 
 })
-// include a gitignore to hide the API key
+
+
+
 
 
 
