@@ -62,7 +62,7 @@ var data = {
       const jsonData = JSON.parse(data);
       console.log(jsonData);
       // response for success
-      if(jsonData.status != "subscribed"){
+      if(jsonData.new_members[0].status != 'subscribed'){
         res.sendFile(__dirname + "/failure.html")
       } else {
         res.sendFile(__dirname + "/success.html")
