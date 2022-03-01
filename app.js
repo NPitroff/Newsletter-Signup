@@ -85,7 +85,7 @@ app.post("/failure", function(req, res){
 
 
 
-// turn on server
-app.listen(3000, function(){
+// turn on server either on heroku or locally
+app.listen(process.env.PORT || 3000, function(){
   console.log("Running on port 3000")
 })
