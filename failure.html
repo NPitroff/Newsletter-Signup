@@ -15,8 +15,12 @@
       <p class="lead">Something went wrong, dont worry we are working on it!</p>
 
       <!-- button to navigate back to the sign in -->
-      <form>
+      <!-- <form>
         <input type="button" name="goBack" value="Retun to sign in" onclick="history.go(-1)">
+      </form> -->
+      <!-- button using routes -->
+      <form action="/failure" method="post">
+        <button Class="btn btn-lg btn-warning" type="submit" name="button">Return to Sign In</button>
       </form>
     </div>
   </div>
