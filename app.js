@@ -76,8 +76,10 @@ var data = {
 
 })
 
-
-
+// post route for failure
+app.post("/failure", function(req, res){
+  res.sendFile(__dirname + "/signup.html");
+})
 
 
 
