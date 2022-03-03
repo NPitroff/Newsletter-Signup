@@ -49,7 +49,7 @@ var data = {
   var jsonData = JSON.stringify(data);
 
   var url = "https://us14.api.mailchimp.com/3.0/lists/db11378812";
-  var apiKey = process.env.API_Key;
+  var apiKey = process.env.API_KEY;
   var name = process.env.NAME;
 
   const options = {
